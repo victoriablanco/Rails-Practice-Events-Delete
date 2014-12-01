@@ -23,6 +23,18 @@ Things you may want to cover:
 
 * ...
 
+Events have:
+
+a date
+a description
+whether the event requires an ID
+capacity
+directions to the event
+You will need to handroll the controllers, views, models, migrations and routes to make this happen!
+
+
+
+
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
