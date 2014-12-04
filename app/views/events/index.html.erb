@@ -1,5 +1,6 @@
 <%= link_to "Add New Event", new_event_path %>
-<table>
+
+<table class="table">
   <thead>
     <tr>
       <th> Date </th>
@@ -7,23 +8,20 @@
       <th> REQUIRES ID </th>
       <th> Capacity </th>
       <th> Directions </th>
-</tr>
-</thead>
-<tbody>
+    </tr>
+  </thead>
 
+  <tbody>
     <% @events.each do |event| %>
-<tr><td><%= event.date %></td>
-  <td><%= event.description %></td>
-  <td><%= event.requires_id %></td>
-  <td><%= event.capacity %></td>
-  <td><%= event.directions %></td>
-</tr>
-
-
-</tbody>
-
-
+    <tr>
+      <td><%= event.date %></td>
+      <td><%= event.description %></td>
+      <td><%= event.requires_id %></td>
+      <td><%= event.capacity %></td>
+      <td><%= event.directions %></td>
+      <td><%= link_to "Edit", edit_event_path(event) %></td>
+      <td><%= link_to "Delete", event_path(event), method: :delete, data: {confirm: "Are you sure?"} %></td>
+    </tr>
+    <% end %>
+  </tbody>
 </table>
-
-
-<% end %>

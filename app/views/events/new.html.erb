@@ -1,4 +1,6 @@
-<%= form_for @events do |f| %>
+<%= form_for @event, html:{class:"form-horizontal"}  do |f| %>
+
+<div class="container">
 
 <%= f.label :date %>
 <%= f.date_field :date %>
@@ -18,3 +20,4 @@
 <%= f.submit %>
 
 <% end %>
+</div>
