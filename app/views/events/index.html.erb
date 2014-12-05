@@ -1,27 +1,31 @@
-<%= link_to "Add New Event", new_event_path %>
+<div class="container">
+  <h1>Event Directory</h1><br/>
+  <%= link_to "Add New Event", new_event_path %>
 
-<table class="table">
-  <thead>
-    <tr>
-      <th> Date </th>
-      <th> Description </th>
-      <th> REQUIRES ID </th>
-      <th> Capacity </th>
-      <th> Directions </th>
-    </tr>
-  </thead>
+  <table class="table">
+    <thead>
+      <tr>
+        <th> Date </th>
+        <th> Description </th>
+        <th> REQUIRES ID </th>
+        <th> Capacity </th>
+        <th> Directions </th>
+      </tr>
+    </thead>
 
-  <tbody>
-    <% @events.each do |event| %>
-    <tr>
-      <td><%= event.date %></td>
-      <td><%= event.description %></td>
-      <td><%= event.requires_id %></td>
-      <td><%= event.capacity %></td>
-      <td><%= event.directions %></td>
-      <td><%= link_to "Edit", edit_event_path(event) %></td>
-      <td><%= link_to "Delete", event_path(event), method: :delete, data: {confirm: "Are you sure?"} %></td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
+    <tbody>
+      <% @events.each do |event| %>
+      <tr>
+        <td><%= event.date %></td>
+        <td><%= event.description %></td>
+        <td><%= event.requires_id %></td>
+        <td><%= event.capacity %></td>
+        <td><%= event.directions %></td>
+        <td><%= link_to "Edit", edit_event_path(event) %></td>
+        <td><%= link_to "Delete", event_path(event), method: :delete, data: {confirm: "Are you sure?"} %></td>
+        <td><%= link_to "Review Event", event_path(event) %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
